@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find fanuc_resources)/urdf/common_materials.xacro"/>
+  <xacro:macro name="fanuc_lrmate200id" params="prefix">  
+  <!--###########################################LINK###################################-->
+    <link name="${prefix}link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_1.stl"/>
+        </geometry>
+        <xacro:material_fanuc_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="2.0" />
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+        </inertial>
+    </link>
+    <link name="${prefix}link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_2.stl"/>
+        </geometry>
+        <xacro:material_fanuc_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_2.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="1.5" />
+            <inertia ixx="0.008" ixy="0.0" ixz="0.0" iyy="0.008" iyz="0.0" izz="0.008" />
+        </inertial>
+    </link>
+    <link name="${prefix}link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_3.stl"/>
+        </geometry>
+        <xacro:material_fanuc_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_3.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="1.0" />
+            <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005" />
+        </inertial>
+    </link>
+    <link name="${prefix}link_4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_4.stl"/>
+        </geometry>
+        <xacro:material_fanuc_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_4.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="1.2" />
+            <inertia ixx="0.007" ixy="0.0" ixz="0.0" iyy="0.007" iyz="0.0" izz="0.007" />
+        </inertial>
+    </link>
+    <link name="${prefix}link_5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_5.stl"/>
+        </geometry>
+        <xacro:material_fanuc_yellow />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_5.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.8" />
+            <inertia ixx="0.003" ixy="0.0" ixz="0.0" iyy="0.003" iyz="0.0" izz="0.003" />
+        </inertial>
+    </link>
+    <link name="${prefix}link_6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/visual/link_6.stl"/>
+        </geometry>
+        <xacro:material_fanuc_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_lrmate200id_support/meshes/lrmate200id/collision/link_6.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.5" />
+            <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.002" iyz="0.0" izz="0.002" />
+        </inertial>
+    </link>
+	<link name="gripper_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/visual/hand.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/collision/hand.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <mass value="0.3" />
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        </inertial>
+  </link>
+  <link name="leftfinger">
+    <visual>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/visual/finger.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/collision/finger.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+    </inertial>
+  </link>
+  <link name="rightfinger">
+    <visual>
+      <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/visual/finger.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://moveit_resources_panda_description/meshes/collision/finger.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="0.1" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+ </inertial>
+  </link>
+    <!--#######################################JOINT#######################################-->
+    <joint name="${prefix}joint_1" type="revolute">
+      <origin xyz="0 0 0.330" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="${prefix}link_1" />
+      <axis xyz="0 0 1" />
+      <limit effort="0" lower="${radians(-170)}" upper="${radians(170)}" velocity="${radians(450)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}joint_2" type="revolute">
+      <origin xyz="0.050 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_1" />
+      <child link="${prefix}link_2" />
+      <axis xyz="0 1 0" />
+      <limit effort="0" lower="${radians(-100)}" upper="${radians(145)}" velocity="${radians(380)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}joint_3" type="revolute">
+      <origin xyz="0 0 0.330" rpy="0 0 0"/>
+      <parent link="${prefix}link_2" />
+      <child link="${prefix}link_3" />
+      <axis xyz="0 -1 0" />
+      <limit effort="0" lower="${radians(-70)}" upper="${radians(205)}" velocity="${radians(520)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}joint_4" type="revolute">
+      <origin xyz="0 0 0.035" rpy="0 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <axis xyz="-1 0 0"/>
+      <limit effort="0" lower="${radians(-190)}" upper="${radians(190)}" velocity="${radians(550)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}joint_5" type="revolute">
+      <origin xyz="0.335 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <axis xyz="0 -1 0"/>
+      <limit effort="0" lower="${radians(-125)}" upper="${radians(125)}" velocity="${radians(545)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}joint_6" type="revolute">
+      <origin xyz="0.080 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <axis xyz="-1 0 0"/>
+      <limit effort="0" lower="${radians(-360)}" upper="${radians(360)}" velocity="${radians(1000)}" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <link name="${prefix}flange" />
+    <joint name="${prefix}link_6_flange" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link_6" />
+      <child link="${prefix}flange" />
+      <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="${prefix}flange_gripper" type="fixed">
+      <origin xyz="0 0 0" rpy="${pi} ${-pi/2.0} 0" />
+      <parent link="${prefix}flange" />
+      <child link="gripper_link" />
+    <dynamics damping="20" friction="0.1"/>
+    </joint>
+    <joint name="finger_joint_1" type="prismatic">
+    <parent link="gripper_link"/>
+    <child link="leftfinger"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
+    <dynamics damping="20" friction="0.1"/>
+  </joint>
+  <joint name="finger_joint_2" type="prismatic">
+    <parent link="gripper_link"/>
+    <child link="rightfinger"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
+    <mimic joint="finger_joint_1"/>
+    <dynamics damping="20" friction="0.1"/>
+  </joint>
+  <!--##########################################TRANS####################################-->
+  <transmission name="${prefix}joint_1_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_1">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_1_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="${prefix}joint_2_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_2">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_2_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="${prefix}joint_3_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_3">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_3_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="${prefix}joint_4_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_4">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_4_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="${prefix}joint_5_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_5">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_5_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="${prefix}joint_6_trans">
+        <provideFeedback>true</provideFeedback>
+        <implicitSpringDamper>0</implicitSpringDamper>
+        <motorTorqueConstant>0.418</motorTorqueConstant>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}joint_6">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}joint_6_motor">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+      <transmission name="trans_finger_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_joint_1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="finger_joint_1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_finger_joint_2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_joint_2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="finger_joint_2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+  <!--####################################GAZEBO_COLOR##########################################-->
+      <gazebo reference="base_link">
+        <material>Gazebo/Black</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_1">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_2">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_3">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_4">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_5">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="${prefix}link_6">
+        <material>Gazebo/Yellow</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="gripper_link">
+        <material>Gazebo/Black</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="leftfinger">
+        <material>Gazebo/Black</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+      <gazebo reference="rightfinger">
+        <material>Gazebo/Black</material>
+        <selfCollide>true</selfCollide>
+      </gazebo>
+  </xacro:macro>
+</robot>
